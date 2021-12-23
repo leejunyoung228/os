@@ -5,6 +5,13 @@ document.getElementsByTagName("head")[0].appendChild(oScript);
 
 var clickRecord = document.querySelector("#record");
 
+function movem1(){
+    $.ajax({
+        type: 'GET',
+        url: '/movemain1'
+    })
+}
+// 메인 -> 표
 
 $().ready(function () {
     $("#record").click(function () {
@@ -20,7 +27,8 @@ $().ready(function () {
         }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire(
-                    location.href = "main1.html"
+
+                    location.href = "/move"
                 )
             }
         })

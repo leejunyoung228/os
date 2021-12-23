@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>기록</title>
+    <link rel="stylesheet" href="static/main1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body onload="openphoto()">
+    <div>
+        <table border="1">
+            <thead>
+                <tr class="background">
+                    <th>time</th>
+                    <th>image</th>
+                </tr>
+                <tr class="white" >
+		   
+                </tr>
+            </thead>
+<tbody id="table"></tbody>
+        </table>
+    </div>
+    <script>
+	function openphoto() {
+        $.ajax({
+            type: 'GET',
+            url: '/get',
+            datatype:'json',
+            success: function(data) {
+                var tabledata = ""
+                for(var i in data) {
+                        obj=JSON.parse(data[i][1])
+                        tabledata += "<tr>"
+                        tabledata += "<th>"+obj.name.split('.')[0]+"</th>"
+                        tabledata += "<th><img src=\"../static/"+obj.name+"\"></th>"
+                        tabledata += "</tr>"
+                }
+                document.getElementById("table").innerHTML = tabledata
+	    }
+        });
+        }
+    </script>
+</body>
+</html>

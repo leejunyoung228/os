@@ -42,7 +42,7 @@ button{background: 0 none; border: 0 none;}
     left: 45%;
     top: 210px;
     
-  }
+}
 .typing-txt::after{
     position:absolute; 
     display:block;

@@ -1,12 +1,7 @@
-clickRecord.addEventListener("click", function(){
-    $.ajax({
-        type: 'GET',
-        url: '/movemain1'
-    })
-})
-// 메인 -> 표
-
-
+var oScript = document.createElement("script");
+oScript.type = "text/javascript";
+oScript.src = "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js";
+document.getElementsByTagName("head")[0].appendChild(oScript);
 
 
 clickRecord.addEventListener("click", function() {
@@ -19,9 +14,8 @@ clickRecord.addEventListener("click", function() {
                     for(var i in data) {
                         obj = JSON.parse(data[i][1])
                         tabledata += "<tr>"
-                        tabledata += "<th>"+data[i][0]+"</th>"
-                        tabledata += "<th>"+obj.yeardate+"</th>"
-                        tabledata += "<th>"+obj.time+"</th>"
+                        tabledata += "<th>"+obj.yeardatetime+"</th>"
+                        tabledata += "<th><img src="+obj.image+"></th>"
                         tabledata += "</tr>"
                     }
 

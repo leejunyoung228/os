@@ -14,16 +14,11 @@ th:nth-child(2) {
     width: 30%;
 }
 
-th:nth-child(3){
-    width: 20%;
-}
 #record{
     border-radius: 5px;
     border: solid white;
 }
-.white{
-    color: white;
-}
+
 .background th{
     color : white;
 }
