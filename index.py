@@ -1,6 +1,6 @@
 from flask import Flask, render_template, jsonify, redirect
 from db import Database
-picdb=Database.Database()
+#picdb=Database.Database()
 
 app = Flask(__name__)
 
@@ -15,7 +15,7 @@ def main1():
     return render_template("main1.html")
 @app.route('/get')
 def get():
-    result=picdb.selectAll()
-    return jsonify(result)
+    picdb=Database.Database()
+    return jsonify(picdb.selectAll())
 if __name__ == "__main__":
     app.run(host="0.0.0.0")

@@ -19,4 +19,4 @@ while True:
         camera.capture('/home/pi/web1/static/{}'.format(name))
         camera.stop_preview()
         picdb.insert(name)
-        time.sleep(5)
+        time.sleep(3)
